@@ -2,14 +2,14 @@
 Created on Tue Aug 14 17:58:44 2018
 @author: chwu
 """
+# read binary file to integer array
+# c is how many byte you want to skip
 
-import matplotlib.pyplot as plt
-
-
-def read_data(filename):
+def read_data(filename,c):
     with open(filename, 'rb') as infile:
         lines = []
-        infile.seek(512)
+        if c>0:
+            infile.seek(c)
         byte = infile.read(1)
         lines.append(byte)
         while byte:
@@ -18,6 +18,3 @@ def read_data(filename):
             lines.append(int.from_bytes(byte,'little'))
     infile.close
     return lines
-
-plt.plot(read_data('testfile.RAW'))
-plt.show()
