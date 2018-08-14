@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
 """
 Created on Tue Aug 14 17:58:44 2018
-
-@author: kylab
+@author: chwu
 """
 
 def read_data(filename):
